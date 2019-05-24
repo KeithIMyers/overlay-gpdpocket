@@ -1,0 +1,62 @@
+{
+  "_comment": "See http://www.chromium.org/chromium-os/building-chromium-os/disk-layout-format",
+  "metadata":{
+    "rootdev_base": "/sys/devices/pci0000:00/0000:00:1e.4/mmc_host/mmc0/mmc0:0001/block/mmcblk0 /sys/devices/pci0000:00/0000:00:1c.4/0000:02:00.0/nvme/nvme0/nvme0n1"
+  },
+  "parent": "legacy_disk_layout.json",
+  "layouts": {
+    # common is the standard layout template.
+    "common": [
+      {
+        # Slot B rootfs. Updated for more space, like Slot A below
+        "num": 5,
+        "size": "4096 MiB"
+      },
+      {
+        # Slot A rootfs. Adjust to allow for more space.
+        "num": 3,
+        "fs_size_min": "2300 MiB",
+        "size": "4096 MiB"
+      }
+    ],
+    "usb": [
+      {
+        # TODO(adlr): see why stacking logic fails, thus requiring this section
+        # in this file
+        "num": 5,
+        "size": "2 MiB"
+      },
+      {
+        "num": 3,
+        "size": "2400 MiB"
+      }
+    ],
+    # Used for factory install images. No need to adjust fs size or partition
+    # size since these do not need more space.
+    "factory_install": [
+      {
+        "num": 5,
+        "size": "2 MiB"
+      },
+      {
+        "num": 3,
+        "size": "420 MiB",
+        "fs_size_min": "400 MiB",
+        "fs_size": "400 MiB"
+      }
+    ],
+    # Huge rootfs, suitable for VM only images, should not be used
+    # for actual hardware devices.
+    "16gb-rootfs": [
+      {
+        "num": 5,
+        "size": "2 MiB"
+      },
+      {
+        "num": 3,
+        "fs_size": "16000 MiB",
+        "size": "16384 MiB"
+      }
+    ]
+  }
+}

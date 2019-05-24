@@ -1,0 +1,105 @@
+# Copyright 2015 The Chromium OS Authors. All rights reserved.
+# Distributed under the terms of the GNU General Public License v2
+
+#CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+CHROMEOS_KERNEL_ARCH="x86_64"
+#CHROMEOS_KERNEL_CONFIG="/mnt/host/source/src/overlays/overlay-gpdpocket/kconfigs/.config"
+CHROMEOS_KERNEL_CONFIG="/mnt/host/source/src/overlays/overlay-gpdpocket/kconfigs/km414.config"
+
+
+
+# We assume that our 64bit baseline CPU supports at least
+# MMX, SSE, SSE2, and SSE3.
+BOARD_COMPILER_FLAGS="-march=x86-64 -msse3"
+
+CPU_FLAGS_X86="mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 avx aes"
+
+
+# Include many firmwares as this is a "generic" board and might run on a
+# wide variety of platforms with who knows what kind of hardware.
+#LINUX_FIRMWARE="iwlwifi-all"
+LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm4354-bt"
+#INPUT_DEVICES="st wacom"
+INPUT_DEVICES="st wacom keyboard mouse evdev synaptics libinput"
+
+
+
+# Use LLVM amdgpu target when building LLVM.
+LLVM_TARGETS="AMDGPU X86"
+
+# Initial value just for style purposes.
+USE=""
+USE="${USE} cyan"
+USE="${USE} cros_ec touchview"
+USE="${USE} acpi apm"
+USE="${USE} containers kvm_host crosvm-gpu"
+
+USE="${USE} dptf"
+
+# QCA Wifi and BT
+LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt"
+
+
+#Declare TPM Model
+USE="${USE} tpm_slb9655"
+
+#Mock TPM
+USE="${USE} -tpm2 mocktpm"
+
+# Google USBPD peripheral firmwares
+LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
+
+# Enable TPM2
+#USE="${USE} -tpm tpm2"
+
+USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_14"
+#USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
+#USE="${USE} legacy_keyboard legacy_power_button sse kernel-next"
+#USE="${USE} legacy_keyboard legacy_power_button sse kernel-upstream-next"
+
+# Enable Audio
+USE="${USE} alsa oss"
+#USE="${USE} pulseaudio alsa oss alsa-plugin"
+USE="${USE} direncryption"
+
+# Enable all optional features on generic overlays.
+USE="${USE} buffet"
+
+
+
+# LLVM is required to build the llvmpipe and radeon drivers.
+USE="${USE} llvm"
+
+# Enable camera HALv3
+USE="${USE} arc-camera3"
+
+# Enable vivid
+USE="${USE} vivid"
+
+# Enable usbip
+USE="${USE} usbip"
+
+# Enable Downloadable Content (DLC)
+USE="${USE} dlc"
+
+# Include the kernel in the base image.
+USE="${USE} include_vmlinuz"
+
+
+
+# Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
+# boards as all new boards must be unibuild enabled moving forward. Do not copy this
+# to new boards as it will be rejected. See
+# https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md
+# for further details about chromeos-config, which is the required entry point for
+# unified builds.
+USE="${USE} -unibuild"
+
+# Enable a few more video cards as this is a generic board.
+VIDEO_CARDS="intel llvmpipe i965"
+USE="${USE} -video_cards_i965 video_cards_iHD"
+#USE="${USE} video_cards_iHD"
+
+USE="${USE} -arc x264 widevine"
+
+#USE="${USE} tpm"

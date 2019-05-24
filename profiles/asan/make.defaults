@@ -1,0 +1,1 @@
+USE="asan -cfi tests_logging_AsanCrash -thinlto"
