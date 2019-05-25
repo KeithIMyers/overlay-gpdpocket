@@ -52,7 +52,7 @@ cros_sdk bash OSLab-initGPD.sh'''
         sh '''export PATH="$HOME/depot_tools:$PATH"
 umask 022
 cd /OSLab/ChromiumOS
-echo "Adding Flashrom
+echo "Adding Flashrom"
 cros_sdk bash OSLab-AddFlashrom.sh'''
       }
     }
