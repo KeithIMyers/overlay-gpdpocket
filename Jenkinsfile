@@ -23,8 +23,7 @@ cros clean'''
         }
         stage('Kill DevServer') {
           steps {
-            sh '''screen -ls  | egrep "^\\s*[0-9]+.crosOTA" | awk -F "." \'{print $1}\' | xargs kill
-'''
+            sh 'bash /var/lib/jenkins/depot_tools/kill_dev_server'
           }
         }
       }
