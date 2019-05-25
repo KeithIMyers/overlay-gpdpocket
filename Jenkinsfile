@@ -11,12 +11,22 @@ repo sync'''
       }
     }
     stage('Clean Up Previous Build') {
-      steps {
-        sh '''export PATH="$HOME/depot_tools:$PATH"
+      parallel {
+        stage('Clean Up Previous Build') {
+          steps {
+            sh '''export PATH="$HOME/depot_tools:$PATH"
 umask 022
 cd /OSLab/ChromiumOS
 echo "Cleaning Up"
 cros clean'''
+          }
+        }
+        stage('Kill DevServer') {
+          steps {
+            sh '''screen -ls  | egrep "^\\s*[0-9]+.crosOTA" | awk -F "." \'{print $1}\' | xargs kill
+'''
+          }
+        }
       }
     }
     stage('Add My GPDPoclet Overlay to the Build') {
@@ -45,6 +55,11 @@ umask 022
 cd /OSLab/ChromiumOS
 echo "Adding Flashrom
 cros_sdk bash OSLab-AddFlashrom.sh'''
+      }
+    }
+    stage('Start The DevServer on Port 888') {
+      steps {
+        sh 'screen -S crosOTA -dm cros_sdk start_devserver --port 888'
       }
     }
   }
