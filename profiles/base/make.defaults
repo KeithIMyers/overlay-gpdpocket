@@ -29,7 +29,7 @@ LLVM_TARGETS="AMDGPU X86"
 
 # Initial value just for style purposes.
 USE=""
-USE="${USE} cyan"
+#USE="${USE} cyan"
 USE="${USE} cros_ec touchview"
 USE="${USE} acpi apm"
 USE="${USE} containers kvm_host crosvm-gpu"
@@ -41,7 +41,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt"
 
 
 #Declare TPM Model
-USE="${USE} tpm_slb9655"
+#USE="${USE} tpm_slb9655"
 
 #Mock TPM
 USE="${USE} -tpm2 mocktpm"
