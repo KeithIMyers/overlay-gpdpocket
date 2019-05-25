@@ -28,7 +28,7 @@ cros clean'''
         }
       }
     }
-    stage('Add My GPDPoclet Overlay to the Build') {
+    stage('Add My GPDPocket Overlay to the Build') {
       steps {
         sh '''export PATH="$HOME/depot_tools:$PATH"
 umask 022
@@ -56,9 +56,9 @@ echo "Adding Flashrom"
 cros_sdk bash OSLab-AddFlashrom.sh'''
       }
     }
-    stage('Start The DevServer on Port 888') {
+    stage('Start The DevServer on Port 1985') {
       steps {
-        sh 'screen -S crosOTA -dm cros_sdk start_devserver --port 2085'
+        sh 'screen -S crosOTA -dm cros_sdk start_devserver --port 1985'
       }
     }
     stage('Build Core OS From Source') {
@@ -87,6 +87,15 @@ umask 022
 cd /OSLab/ChromiumOS
 echo "Starting Core OS"
 cros_sdk bash OSLab-CreateVMfromTestImage.sh'''
+      }
+    }
+    stage('Spinning Up TestVM an Running Smoke Tests') {
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Spinning Up TestVM and Running Tests"
+cros_sdk bash OSLab-RunUnitTests.sh'''
       }
     }
   }
