@@ -11,21 +11,12 @@ repo sync'''
       }
     }
     stage('Clean Up Previous Build') {
-      parallel {
-        stage('Clean Up Previous Build') {
-          steps {
-            sh '''export PATH="$HOME/depot_tools:$PATH"
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
 umask 022
 cd /OSLab/ChromiumOS
 echo "Cleaning Up"
 cros clean'''
-          }
-        }
-        stage('Kill DevServer') {
-          steps {
-            sh 'bash /var/lib/jenkins/depot_tools/kill_dev_server'
-          }
-        }
       }
     }
     stage('Add My GPDPocket Overlay to the Build') {
