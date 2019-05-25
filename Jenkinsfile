@@ -61,5 +61,33 @@ cros_sdk bash OSLab-AddFlashrom.sh'''
         sh 'screen -S crosOTA -dm cros_sdk start_devserver --port 2085'
       }
     }
+    stage('Build Core OS From Source') {
+      steps {
+        echo 'This is going to take a while, best to grab a coffee or take a nap'
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Starting Core OS"
+cros_sdk bash OSLab-BuildOSCore.sh'''
+      }
+    }
+    stage('Build Test Image') {
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Starting Core OS"
+cros_sdk bash OSLab-BuildTestImage.sh'''
+      }
+    }
+    stage('Create VM From Test Image') {
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Starting Core OS"
+cros_sdk bash OSLab-CreateVMfromTestImage.sh'''
+      }
+    }
   }
 }
