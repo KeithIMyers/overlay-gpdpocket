@@ -18,7 +18,8 @@ CPU_FLAGS_X86="mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 avx aes"
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware.
 #LINUX_FIRMWARE="iwlwifi-all"
-LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm4354-bt"
+#LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm4354-bt"
+LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt"
 #INPUT_DEVICES="st wacom"
 INPUT_DEVICES="st wacom keyboard mouse evdev synaptics libinput"
 
