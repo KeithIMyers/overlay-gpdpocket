@@ -89,5 +89,14 @@ echo "Spinning Up TestVM and Running Tests"
 cros_sdk bash OSLab-RunUnitTests.sh'''
       }
     }
+    stage('Building Release Image') {
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Since Unit Testing Passed, it is time to build release images."
+cros_sdk bash OSLab-BuildRelease.sh'''
+      }
+    }
   }
 }
