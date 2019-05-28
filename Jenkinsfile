@@ -51,11 +51,11 @@ cros_sdk bash OSLab-initGPD.sh'''
         }
         stage('Add Software TPM') {
           steps {
-            sh '''export PATH="$HOME/depot_tools:$PATH"
-umask 022
-cd /OSLab/ChromiumOS
-echo "Adding Flashrom"
-cros_sdk bash OSLab-AddSWTPM.sh'''
+            sh '''#export PATH="$HOME/depot_tools:$PATH"
+#umask 022
+#cd /OSLab/ChromiumOS
+#echo "Adding Flashrom"
+#cros_sdk bash OSLab-AddSWTPM.sh'''
           }
         }
       }
