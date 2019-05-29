@@ -60,7 +60,11 @@ USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
 
 # Enable Audio
 USE="${USE} alsa oss"
+USE="${USE} rt5645"
 #USE="${USE} pulseaudio alsa oss alsa-plugin"
+
+
+
 USE="${USE} direncryption"
 
 # Enable all optional features on generic overlays.
