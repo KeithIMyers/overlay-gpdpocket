@@ -7,7 +7,7 @@ pipeline {
 umask 022
 cd /OSLab/ChromiumOS
 echo "Updating Source Code"
-repo sync'''
+repo sync --force-sync'''
       }
     }
     stage('Clean Up Previous Build') {
