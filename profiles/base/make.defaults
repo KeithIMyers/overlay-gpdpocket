@@ -38,7 +38,7 @@ USE="${USE} containers kvm_host crosvm-gpu"
 USE="${USE} dptf"
 
 # QCA Wifi and BT
-LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 
 
 #Declare TPM Model
