@@ -63,6 +63,9 @@ USE="${USE} alsa oss"
 USE="${USE} rt5645 rt5645_aif1"
 #USE="${USE} pulseaudio alsa oss alsa-plugin"
 
+# bq24190-charger
+USE="${USE} bq24190-charger bq24190"
+
 
 
 USE="${USE} direncryption"
