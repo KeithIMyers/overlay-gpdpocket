@@ -66,7 +66,8 @@ USE="${USE} rt5645 rt5645_aif1"
 # bq24190-charger
 USE="${USE} bq24190-charger bq24190"
 
-
+# BATTERY_MAX17042
+USE="${USE} max17042_battery max17042"
 
 USE="${USE} direncryption"
 
