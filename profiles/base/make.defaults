@@ -109,4 +109,4 @@ VIDEO_CARDS="intel llvmpipe i965"
 USE="${USE} -video_cards_i965 video_cards_iHD"
 #USE="${USE} video_cards_iHD"
 
-USE="${USE} -arc x264 widevine"
+USE="${USE} -arc x264 widevine ppapi"
