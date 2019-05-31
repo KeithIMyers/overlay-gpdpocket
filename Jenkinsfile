@@ -38,26 +38,13 @@ echo "Cleaning Up"
 cros_sdk bash OSLab-initGPD.sh'''
       }
     }
-    stage('Build Flashrom and Add it to the Board') {
-      parallel {
-        stage('Build Flashrom and Add it to the Board') {
-          steps {
-            sh '''#export PATH="$HOME/depot_tools:$PATH"
-#umask 022
-#cd /OSLab/ChromiumOS
-#echo "Adding Flashrom"
-#cros_sdk bash OSLab-AddFlashrom.sh'''
-          }
-        }
-        stage('Add Software TPM') {
-          steps {
-            sh '''#export PATH="$HOME/depot_tools:$PATH"
-#umask 022
-#cd /OSLab/ChromiumOS
-#echo "Adding Flashrom"
-#cros_sdk bash OSLab-AddSWTPM.sh'''
-          }
-        }
+    stage('Add Custom Packages') {
+      steps {
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Adding Flashrom"
+cros_sdk bash OSLab-AddFlashrom.sh'''
       }
     }
     stage('Build Core OS From Source') {
