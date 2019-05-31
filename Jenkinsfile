@@ -60,11 +60,6 @@ cros_sdk bash OSLab-initGPD.sh'''
         }
       }
     }
-    stage('Start The DevServer on Port 1985') {
-      steps {
-        sh 'screen -S crosOTA -dm cros_sdk start_devserver --port 1985'
-      }
-    }
     stage('Build Core OS From Source') {
       steps {
         echo 'This is going to take a while, best to grab a coffee or take a nap'
@@ -109,6 +104,11 @@ umask 022
 cd /OSLab/ChromiumOS
 echo "Since Unit Testing Passed, it is time to build release images."
 cros_sdk bash OSLab-BuildRelease.sh'''
+      }
+    }
+    stage('Start OTA Server') {
+      steps {
+        sh 'bash /OSLab/scripts/start_devserver.sh'
       }
     }
   }
