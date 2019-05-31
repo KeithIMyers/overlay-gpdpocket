@@ -60,7 +60,7 @@ USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
 
 # Enable Audio
 USE="${USE} alsa oss"
-USE="${USE} rt5645 rt5645_aif1"
+USE="${USE} rt5645 rt5645_aif1 snd-soc-sst-cht-bsw-rt5645 snd-soc-sst-cht-bsw-rt5645"
 #USE="${USE} pulseaudio alsa oss alsa-plugin"
 
 # bq24190-charger
