@@ -51,7 +51,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 # Enable TPM2
-USE="${USE} -tpm tpm2"
+USE="${USE} tpm2"
 
 #USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_14"
 USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
