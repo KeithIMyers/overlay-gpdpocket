@@ -40,11 +40,11 @@ cros_sdk bash OSLab-initGPD.sh'''
     }
     stage('Add Custom Packages') {
       steps {
-        sh '''export PATH="$HOME/depot_tools:$PATH"
-umask 022
-cd /OSLab/ChromiumOS
-echo "Adding Flashrom"
-cros_sdk bash OSLab-AddFlashrom.sh'''
+        sh '''#export PATH="$HOME/depot_tools:$PATH"
+#umask 022
+#cd /OSLab/ChromiumOS
+#echo "Adding Flashrom"
+#cros_sdk bash OSLab-AddFlashrom.sh'''
       }
     }
     stage('Build Core OS From Source') {
