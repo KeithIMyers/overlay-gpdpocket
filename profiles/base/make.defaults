@@ -100,7 +100,7 @@ USE="${USE} include_vmlinuz"
 # https://chromium.googlesource.com/chromiumos/platform2/+/HEAD/chromeos-config/README.md
 # for further details about chromeos-config, which is the required entry point for
 # unified builds.
-USE="${USE} -unibuild"
+#USE="${USE} -unibuild"
 
 # Enable a few more video cards as this is a generic board.
 VIDEO_CARDS="intel llvmpipe i965"
