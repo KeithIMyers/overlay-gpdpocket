@@ -15,10 +15,9 @@ CPU_FLAGS_X86="mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 avx aes"
 
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware.
-#LINUX_FIRMWARE="iwlwifi-all"
-#LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm4354-bt"
+
 LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt bluetooth brcmfmac4356-pcie"
-#INPUT_DEVICES="st wacom"
+
 INPUT_DEVICES="st wacom keyboard mouse evdev synaptics libinput"
 
 
@@ -28,7 +27,6 @@ LLVM_TARGETS="AMDGPU X86"
 
 # Initial value just for style purposes.
 USE=""
-#USE="${USE} cyan"
 USE="${USE} touchview"
 USE="${USE} acpi apm"
 USE="${USE} containers kvm_host crosvm-gpu"
@@ -50,14 +48,11 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 # Enable TPM2
 #USE="${USE} tpm2"
 
-#USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_14"
 USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
-#USE="${USE} legacy_keyboard legacy_power_button sse kernel-next"
-#USE="${USE} legacy_keyboard legacy_power_button sse kernel-upstream-next"
 
 # Enable Audio
 USE="${USE} alsa oss"
-USE="${USE} rt5645 rt5645_aif1 snd-soc-sst-cht-bsw-rt5645 snd-soc-sst-cht-bsw-rt5645"
+USE="${USE} rt5645 rt5645_aif1 snd-soc-sst-cht-bsw-rt5645 snd-soc-sst-cht-bsw-rt5645 brcmfmac4356-pcie"
 #USE="${USE} pulseaudio alsa oss alsa-plugin"
 
 # bq24190-charger
@@ -104,7 +99,7 @@ USE="${USE} -unibuild"
 
 # Enable a few more video cards as this is a generic board.
 VIDEO_CARDS="intel llvmpipe i965"
-#USE="${USE} -video_cards_i965 video_cards_iHD"
+USE="${USE} -video_cards_i965 video_cards_iHD"
 #USE="${USE} video_cards_iHD"
 
 USE="${USE} -arc x264 widevine ppapi"
