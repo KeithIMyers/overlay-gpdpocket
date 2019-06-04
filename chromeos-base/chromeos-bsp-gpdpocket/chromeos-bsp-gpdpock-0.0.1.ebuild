@@ -8,7 +8,7 @@ inherit cros-audio-configs
 DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
 or portage actions."
 
-LICENSE="BSD-Google"
+LICENSE="GPL"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
 S="${WORKDIR}"
