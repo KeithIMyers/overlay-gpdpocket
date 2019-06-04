@@ -16,7 +16,7 @@ repo sync --force-sync'''
 umask 022
 cd /OSLab/ChromiumOS
 echo "Cleaning Up"
-//cros clean'''
+cros clean'''
       }
     }
     stage('Add My GPDPocket Overlay to the Build') {
