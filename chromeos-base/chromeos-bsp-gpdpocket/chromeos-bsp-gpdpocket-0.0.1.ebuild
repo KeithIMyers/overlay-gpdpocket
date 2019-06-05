@@ -3,15 +3,16 @@
 
 EAPI=4
 
-#inherit cros-audio-configs
+inherit appid cros-audio-configs
 
-DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies
-or portage actions."
+DESCRIPTION="Ebuild which pulls in any necessary ebuilds as dependencies or portage actions."
 
-LICENSE="GPL"
+LICENSE="BSD-Google"
 SLOT="0"
 KEYWORDS="-* amd64 x86"
+IUSE=""
 S="${WORKDIR}"
+
 
 # Add dependencies on other ebuilds from within this board overlay
 RDEPEND=""
