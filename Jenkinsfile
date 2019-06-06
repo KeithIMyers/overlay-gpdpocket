@@ -16,7 +16,7 @@ repo sync --force-sync'''
 umask 022
 cd /OSLab/ChromiumOS
 echo "Cleaning Up"
-cros clean'''
+#cros clean'''
       }
     }
     stage('Add My GPDPocket Overlay to the Build') {
@@ -95,7 +95,7 @@ cros_sdk bash OSLab-BuildRelease.sh'''
     }
     stage('Start OTA Server') {
       steps {
-        sh 'bash /OSLab/scripts/start_devserver.sh'
+        sh '#bash /OSLab/scripts/start_devserver.sh'
       }
     }
   }
