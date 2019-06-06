@@ -4,7 +4,7 @@
 
 EAPI="4"
 
-DESCRIPTION="vistual bsp"
+DESCRIPTION="Virtual BSP"
 HOMEPAGE="https://kmyers.me/ChromiumOS/"
 
 LICENSE="BSD-Google"
