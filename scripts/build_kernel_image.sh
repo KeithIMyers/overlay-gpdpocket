@@ -7,5 +7,4 @@
 modify_kernel_command_line() {
   # Don't disable the ability to run VMs.
   echo "disablevmx=off" >> "$1"
-  touch /etc/test.km
 }
