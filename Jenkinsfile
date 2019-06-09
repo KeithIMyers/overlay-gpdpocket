@@ -10,13 +10,13 @@ echo "Updating Source Code"
 repo sync --force-sync'''
       }
     }
-    stage('Clean Up Previous Build') {
+    stage('Run OSLab Init Scripts') {
       steps {
         sh '''export PATH="$HOME/depot_tools:$PATH"
 umask 022
 cd /OSLab/ChromiumOS
 echo "Cleaning Up"
-#cros clean'''
+bash /OSLab/scripts/initOSLab '''
       }
     }
     stage('Add My GPDPocket Overlay to the Build') {
