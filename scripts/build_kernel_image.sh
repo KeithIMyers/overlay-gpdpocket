@@ -6,5 +6,5 @@
 
 modify_kernel_command_line() {
   # Don't disable the ability to run VMs.
-  echo "disablevmx=off" >> "$1"
+  echo "fbcon=rotate:1 dmi_product_name=GPD-Pocket disablevmx=off" >> "$1"
 }
