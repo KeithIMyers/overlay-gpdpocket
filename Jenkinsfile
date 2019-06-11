@@ -93,9 +93,13 @@ echo "Since Unit Testing Passed, it is time to build release images."
 cros_sdk bash OSLab-BuildRelease.sh'''
       }
     }
-    stage('Start OTA Server') {
+    stage('Creating OTA Package') {
       steps {
-        sh '#bash /OSLab/scripts/start_devserver.sh'
+        sh '''export PATH="$HOME/depot_tools:$PATH"
+umask 022
+cd /OSLab/ChromiumOS
+echo "Getting things ready"
+cros_sdk bash OSLab-patchGPD'''
       }
     }
   }
