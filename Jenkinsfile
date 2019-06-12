@@ -102,5 +102,10 @@ echo "Getting things ready"
 cros_sdk bash OSLab-patchGPD'''
       }
     }
+    stage('Start OTA Server') {
+      steps {
+        sh 'bash /OSLab/scripts/start_devserver.sh'
+      }
+    }
   }
 }
