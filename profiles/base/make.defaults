@@ -63,7 +63,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} bq24190-charger bq24190"
 # BATTERY_MAX17042
 USE="${USE} max17042_battery max17042"
 
-USE="${USE} direncryption"
+#USE="${USE} direncryption"
 
 # Enable all optional features on generic overlays.
 USE="${USE} buffet"
