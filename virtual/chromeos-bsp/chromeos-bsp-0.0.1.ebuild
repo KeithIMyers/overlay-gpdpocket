@@ -9,8 +9,7 @@ HOMEPAGE="https://kmyers.me/ChromiumOS/"
 
 LICENSE="BSD-Google"
 SLOT="0"
-KEYWORDS="*"
-IUSE=""
+KEYWORDS="-* amd64 x86"
 
 RDEPEND="chromeos-base/chromeos-bsp-gpdpocket"
 
