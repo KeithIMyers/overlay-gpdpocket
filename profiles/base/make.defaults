@@ -30,7 +30,7 @@ USE=""
 USE="${USE} touchview"
 USE="${USE} acpi apm"
 USE="${USE} containers kvm_host crosvm-gpu"
-
+USE="${USE} arcvm"
 USE="${USE} dptf"
 
 # QCA Wifi and BT
