@@ -21,5 +21,5 @@ DEPEND="${RDEPEND}"
 
 src_install() {
     insinto "/etc/modprobe.d"
-    doins "${FILESDIR}/gpd-blacklist.conf"
+    doins "${FILESDIR}/gpd-blacklist2.conf"
 }
