@@ -33,6 +33,9 @@ USE="${USE} containers kvm_host crosvm-gpu"
 USE="${USE} arcvm"
 USE="${USE} dptf"
 
+USE="$USE frecon -X"
+
+
 # QCA Wifi and BT
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 
