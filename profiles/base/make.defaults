@@ -50,7 +50,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 #LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 # Enable TPM2
-USE="${USE} tpm2"
+USE="${USE} -tpm tpm2"
 
 USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
 
