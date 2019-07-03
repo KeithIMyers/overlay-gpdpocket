@@ -43,7 +43,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 
 #Mock TPM
-USE="${USE} -tpm2 tpm mocktpm"
+#USE="${USE} -tpm2 tpm mocktpm"
 #USE="${USE} tpm -tpm2"
 
 # Google USBPD peripheral firmwares
