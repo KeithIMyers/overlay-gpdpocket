@@ -49,7 +49,8 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 #USE="${USE} -tpm2 tpm mocktpm"
 #USE="${USE} tpm -tpm2"
 
-# Google USBPD peripheral firmwares
+#USBPD peripheral firmwares
+USE="${USE} -acpi_ac"
 #LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 # Enable TPM2
@@ -109,7 +110,7 @@ USE="${USE} include_vmlinuz"
 USE="${USE} -unibuild"
 
 # Enable a few more video cards as this is a generic board.
-VIDEO_CARDS="intel llvmpipe i965"
+VIDEO_CARDS="intel"
 USE="${USE} -video_cards_i965 video_cards_iHD"
 #USE="${USE} video_cards_iHD"
 
