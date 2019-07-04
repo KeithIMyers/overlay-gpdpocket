@@ -35,6 +35,9 @@ USE="${USE} dptf"
 
 USE="$USE frecon -X"
 
+#Make things more touch friendly 
+USE="${USE} touch_centric_device"
+
 
 # QCA Wifi and BT
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
