@@ -110,7 +110,8 @@ USE="${USE} include_vmlinuz"
 USE="${USE} -unibuild"
 
 # Enable a few more video cards as this is a generic board.
-VIDEO_CARDS="intel"
+
+VIDEO_CARDS="intel llvmpipe i965"
 USE="${USE} -video_cards_i965 video_cards_iHD"
 #USE="${USE} video_cards_iHD"
 
