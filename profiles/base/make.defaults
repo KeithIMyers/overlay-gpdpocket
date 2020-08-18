@@ -51,10 +51,7 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 
 #USBPD peripheral firmwares
 USE="${USE} -acpi_ac"
-LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
-
-# GPU Support in containers.
-USE="${USE} virtio_gpu"
+#LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 # Enable TPM2
 #USE="${USE} -tpm tpm2"
