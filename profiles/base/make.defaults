@@ -1,107 +1,51 @@
 # Copyright 2019 - Keith I Myers - https://kmyers.me
 # Distributed under the terms of the GNU General Public License v2
 
-#CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
 CHROMEOS_KERNEL_ARCH="x86_64"
-CHROMEOS_KERNEL_CONFIG="/mnt/host/source/src/overlays/overlay-gpdpocket/kconfigs/.config"
-
 
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, and SSE3.
 BOARD_COMPILER_FLAGS="-march=x86-64 -msse3"
 
-CPU_FLAGS_X86="mmx mmxext sse sse2 sse3 ssse3 sse4_1 sse4_2 avx aes"
-
-
 # Include many firmwares as this is a "generic" board and might run on a
 # wide variety of platforms with who knows what kind of hardware.
-
-LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt bluetooth brcmfmac4356-pcie"
-
-INPUT_DEVICES="st wacom keyboard mouse evdev synaptics libinput"
-
-
+LINUX_FIRMWARE="iwlwifi-all"
 
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
 
 # Initial value just for style purposes.
 USE=""
-USE="${USE} touchview"
-USE="${USE} acpi apm"
-USE="${USE} containers kvm_host crosvm-gpu"
-#USE="${USE} arcvm"
-USE="${USE} dptf"
 
-USE="$USE frecon -X"
+USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
-#Make things more touch friendly 
-USE="${USE} touch_centric_device"
-
-
-# QCA Wifi and BT
-LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
-
-# PWM for Screen Brightness Controls
-LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
-
-#Mock TPM
-#USE="${USE} -tpm2 tpm mocktpm"
-#USE="${USE} tpm -tpm2"
-
-#USBPD peripheral firmwares
-USE="${USE} -acpi_ac"
-#LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
-
-# Enable TPM2
-#USE="${USE} -tpm tpm2"
-
-USE="${USE} legacy_keyboard legacy_power_button sse kernel-5_4"
-
-#USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
-USE="${USE} has-kernelnext"
-# Enable Audio
-USE="${USE} alsa oss"
-USE="${USE} rt5645 rt5645_aif1 snd-soc-sst-cht-bsw-rt5645 snd-soc-sst-cht-bsw-rt5645 brcmfmac4356-pcie"
-#USE="${USE} pulseaudio alsa oss alsa-plugin"
-
-# bq24190-charger
-#USE="${USE} bq24190-charger bq24190"
-LINUX_FIRMWARE="${LINUX_FIRMWARE} bq24190-charger bq24190"
-
-# BATTERY_MAX17042
-USE="${USE} max17042_battery max17042"
-
+USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_14"
 USE="${USE} direncryption"
 
 # Enable all optional features on generic overlays.
 USE="${USE} buffet"
 
-
-
 # LLVM is required to build the llvmpipe and radeon drivers.
 USE="${USE} llvm"
+
+# Enable NNAPI for testing.
+USE="${USE} nnapi"
 
 # Enable camera HALv3
 USE="${USE} arc-camera3"
 
-#Add NVME Support for Pocket Max/MicroPC
-USE="${USE} nvme"
-
-
 # Enable vivid
 USE="${USE} vivid"
 
-# Enable usbip
-USE="${USE} usbip"
+# Enable hostap hwsim tests.
+USE="${USE} wifi_hostap_test"
 
 # Enable Downloadable Content (DLC)
-#USE="${USE} dlc"
+USE="${USE} dlc"
 
 # Include the kernel in the base image.
 USE="${USE} include_vmlinuz"
-
-
 
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
@@ -111,10 +55,12 @@ USE="${USE} include_vmlinuz"
 # unified builds.
 USE="${USE} -unibuild"
 
+# Enable wayland and egl for LaCrOS.
+USE="${USE} wayland egl"
+
 # Enable a few more video cards as this is a generic board.
+VIDEO_CARDS="intel llvmpipe nouveau radeon"
 
-VIDEO_CARDS="intel llvmpipe i965"
-USE="${USE} -video_cards_i965 video_cards_iHD"
-#USE="${USE} video_cards_iHD"
-
-USE="${USE} -arc x264 widevine ppapi"
+# Virtual machines don't have physical TPMs.
+# Enable TPM2.0 simulator on it.
+USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
