@@ -56,7 +56,7 @@ USE="${USE} -acpi_ac"
 # Enable TPM2
 #USE="${USE} -tpm tpm2"
 
-USE="${USE} legacy_keyboard legacy_power_button sse"
+USE="${USE} legacy_keyboard legacy_power_button sse kernel-5_4"
 
 #USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
 USE="${USE} has-kernelnext"
