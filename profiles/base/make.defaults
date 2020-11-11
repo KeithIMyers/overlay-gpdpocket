@@ -59,7 +59,7 @@ USE="${USE} -unibuild"
 USE="${USE} wayland egl"
 
 # Enable a few more video cards as this is a generic board.
-VIDEO_CARDS="intel llvmpipe nouveau radeon"
+VIDEO_CARDS="intel llvmpipe nouveau"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
