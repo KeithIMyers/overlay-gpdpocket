@@ -47,6 +47,13 @@ USE="${USE} dlc"
 # Include the kernel in the base image.
 USE="${USE} include_vmlinuz"
 
+# GPD Pocket Firmware
+LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt bluetooth brcmfmac4356-pcie"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
+
+# PWM for Screen Brightness Controls
+LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
+
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
 # to new boards as it will be rejected. See
