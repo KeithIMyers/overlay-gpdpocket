@@ -43,7 +43,7 @@ USE="${USE} vivid"
 USE="${USE} wifi_hostap_test"
 
 # Enable Downloadable Content (DLC)
-USE="${USE} dlc"
+#USE="${USE} dlc"
 
 # Include the kernel in the base image.
 USE="${USE} include_vmlinuz"
