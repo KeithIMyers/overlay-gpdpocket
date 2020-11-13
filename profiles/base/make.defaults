@@ -1,8 +1,9 @@
 # Copyright 2019 - Keith I Myers - https://kmyers.me
 # Distributed under the terms of the GNU General Public License v2
 
-CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
+#CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
 CHROMEOS_KERNEL_ARCH="x86_64"
+CHROMEOS_KERNEL_CONFIG="/mnt/host/source/src/overlays/overlay-gpdpocket/kconfigs/.config"
 
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, and SSE3.
