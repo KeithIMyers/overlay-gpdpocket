@@ -21,7 +21,7 @@ USE=""
 
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
-USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_14"
+USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
 USE="${USE} direncryption"
 
 # Enable all optional features on generic overlays.
