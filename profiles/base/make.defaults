@@ -19,9 +19,15 @@ LLVM_TARGETS="AMDGPU X86"
 # Initial value just for style purposes.
 USE=""
 
+USE="${USE} background_blur"
+USE="${USE} eve_bt_hacks"
+USE="${USE} eve_wifi_etsi"
+
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
 USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
+
+# Use ext4 crypto
 USE="${USE} direncryption"
 
 # Enable all optional features on generic overlays.
