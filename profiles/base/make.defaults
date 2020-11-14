@@ -18,7 +18,7 @@ LLVM_TARGETS="AMDGPU X86"
 
 # Initial value just for style purposes.
 USE=""
-
+USE="${USE} touchview"
 USE="${USE} background_blur"
 USE="${USE} eve_bt_hacks"
 USE="${USE} eve_wifi_etsi"
