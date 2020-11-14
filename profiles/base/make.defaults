@@ -68,10 +68,10 @@ LINUX_FIRMWARE="${LINUX_FIRMWARE} bq24190-charger bq24190"
 USE="${USE} max17042_battery max17042"
 
 # PWM for Screen Brightness Controls
-LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss chtrt5645"
 
 #Add NVME Support for Pocket Max/MicroPC
-USE="${USE} nvme"
+USE="${USE} nvme chtrt5645"
 
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
