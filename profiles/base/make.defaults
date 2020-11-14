@@ -25,7 +25,9 @@ USE="${USE} eve_wifi_etsi"
 
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
-USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
+#USE="${USE} legacy_keyboard legacy_power_button sse kernel-4_19"
+USE="${USE} legacy_keyboard legacy_power_button sse kernel-5_4"
+
 
 # Use ext4 crypto
 USE="${USE} direncryption"
