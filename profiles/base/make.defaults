@@ -57,7 +57,7 @@ USE="${USE} wifi_hostap_test"
 USE="${USE} include_vmlinuz"
 
 # GPD Pocket Firmware
-LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt bluetooth brcmfmac4356-pcie"
+LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt bluetooth brcmfmac4356-pcie bcm5645-bt"
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 
 # bq24190-charger
