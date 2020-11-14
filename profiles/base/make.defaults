@@ -62,6 +62,9 @@ USE="${USE} max17042_battery max17042"
 # PWM for Screen Brightness Controls
 LINUX_FIRMWARE="${LINUX_FIRMWARE} pwm-lpss-platform pwm-lpss"
 
+#Add NVME Support for Pocket Max/MicroPC
+USE="${USE} nvme"
+
 # Disable unibuild on this legacy board. This is only for existing (as of Jan 2019)
 # boards as all new boards must be unibuild enabled moving forward. Do not copy this
 # to new boards as it will be rejected. See
@@ -74,8 +77,10 @@ USE="${USE} -unibuild"
 USE="${USE} wayland egl"
 
 # Enable a few more video cards as this is a generic board.
-VIDEO_CARDS="intel llvmpipe"
+VIDEO_CARDS="intel llvmpipe i965"
+USE="${USE} -video_cards_i965 video_cards_iHD"
 
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
 USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
+USE="${USE} -arc x264 widevine ppapi"
