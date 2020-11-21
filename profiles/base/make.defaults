@@ -4,6 +4,8 @@
 #CHROMEOS_KERNEL_SPLITCONFIG="chromiumos-x86_64"
 CHROMEOS_KERNEL_ARCH="x86_64"
 CHROMEOS_KERNEL_CONFIG="/mnt/host/source/src/overlays/overlay-gpdpocket/kconfigs/.config"
+# Initial value just for style purposes.
+USE=""
 
 # We assume that our 64bit baseline CPU supports at least
 # MMX, SSE, SSE2, and SSE3.
@@ -16,12 +18,17 @@ LINUX_FIRMWARE="iwlwifi-all snd_soc_sst_cht_bsw_rt5645 snd_intel_sst_acpi snd_in
 # Use LLVM amdgpu target when building LLVM.
 LLVM_TARGETS="AMDGPU X86"
 
-# Initial value just for style purposes.
-USE=""
+
 USE="${USE} touchview"
 USE="${USE} background_blur"
 USE="${USE} eve_bt_hacks"
 USE="${USE} eve_wifi_etsi"
+
+# Disable ACPI AC device and use USB PD power supply driver
+USE="${USE} -acpi_ac"
+
+# Google USBPD peripheral firmwares
+LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
