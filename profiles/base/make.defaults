@@ -91,4 +91,6 @@ USE="${USE} -video_cards_i965 video_cards_iHD"
 # Virtual machines don't have physical TPMs.
 # Enable TPM2.0 simulator on it.
 USE="${USE} -tpm tpm2 tpm2_simulator tpm2_simulator_manufacturer"
-USE="${USE} -arc x264 widevine ppapi"
+
+# Misc Stuff
+USE="${USE} -arc x264 widevine ppapi chrome_media"
