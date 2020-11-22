@@ -1,3 +1,6 @@
-ChromiumOS for the GPD Pocket 1
+ChromiumOS for the GPD Pocket 1 and Pocket 2
 
-Please view https://kmyers.me/chromiumos/chromiumos-for-the-gpd-pocket-1/ for a full readme 
+##Build Instructions
+navigate to src/overlays/ and clone this repisitory into the overlays directroy
+
+Build ChromiumOS by using "gpdpocket" as the board name
