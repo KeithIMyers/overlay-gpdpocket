@@ -3,7 +3,7 @@ on: [push]
 jobs:
 
   build:
-    name: Pull upstream source code
+    name: Build ChromiumOS for GPD Pocket 1 and 2
     runs-on: ubuntu-latest
     steps:
     - name: Pull source code
