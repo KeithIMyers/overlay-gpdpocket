@@ -16,7 +16,7 @@ jobs:
         script: |
                 source ~/.bashrc
                 cd /Workspace/ChromiumOS-Prod/
-                export PATH="$HOME/depot_tools:$PATH"
+                repo sync
                 cd /Workspace/ChromiumOS-Prod/src/overlays/overlay-gpdpocket/
                 git pull
                 exit
