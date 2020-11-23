@@ -14,9 +14,4 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-                source ~/.bashrc
-                cd /Workspace/ChromiumOS-Prod/
-                repo sync
-                cd /Workspace/ChromiumOS-Prod/src/overlays/overlay-gpdpocket/
-                git pull
-                exit
+                bash ~/bin/update_chromiumOS_source.sh 
