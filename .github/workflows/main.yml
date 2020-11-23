@@ -15,7 +15,6 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
                 bash ~/bin/update_chromiumOS_source.sh 
-    steps:
     - name: Build ChromiumOS for GPD Pocket 1 and 2
       uses: appleboy/ssh-action@master
       with:
