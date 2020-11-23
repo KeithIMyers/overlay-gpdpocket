@@ -15,6 +15,16 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
                 bash ~/bin/update_chromiumOS_source.sh 
+    steps:
+    - name: Build ChromiumOS for GPD Pocket 1 and 2
+      uses: appleboy/ssh-action@master
+      with:
+        host: ${{ secrets.HOST }}
+        username: ${{ secrets.USERNAME }}
+        password: ${{ secrets.PASSWORD }}
+        port: ${{ secrets.PORT }}
+        script: |
+                bash ~/bin/build_GPD.sh
 
     - name: Restart OTA Services
       uses: appleboy/ssh-action@master
