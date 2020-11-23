@@ -3,10 +3,10 @@ on: [push]
 jobs:
 
   build:
-    name: Build
+    name: Pull upstream source code
     runs-on: ubuntu-latest
     steps:
-    - name: executing remote ssh commands using password
+    - name: Pull source code
       uses: appleboy/ssh-action@master
       with:
         host: ${{ secrets.HOST }}
@@ -14,5 +14,8 @@ jobs:
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
         script: |
-                whoami
-                ls -al
+                cd /Workspace/ChromiumOS-Prod/
+                repo sync
+                cd /Workspace/ChromiumOS-Prod/src/overlays/overlay-gpdpocket/
+                git pull
+                exit
