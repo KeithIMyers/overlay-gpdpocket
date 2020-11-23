@@ -22,7 +22,7 @@ jobs:
         username: ${{ secrets.USERNAME }}
         password: ${{ secrets.PASSWORD }}
         port: ${{ secrets.PORT }}
-        command_timeout: 120m
+        command_timeout: 250m
         script: |
                 bash ~/bin/build_GPD.sh
 
