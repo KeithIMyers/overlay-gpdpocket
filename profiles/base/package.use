@@ -1,1 +1,3 @@
 media-libs/mesa egl gles2 shared-glapi
+chromeos-base/libchromeos-use-flags native_gpu_memory_buffers drm_atomic
+chromeos-base/chromeos-chrome chrome_media
