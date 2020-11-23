@@ -15,17 +15,5 @@ jobs:
         port: ${{ secrets.PORT }}
         script: |
                 bash ~/bin/update_chromiumOS_source.sh 
-    restartOTA:
-    name: Restart the OTA Service
-    runs-on: ubuntu-latest
-    steps:
-    - name: Restart OTA Service
-      uses: appleboy/ssh-action@master
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        password: ${{ secrets.PASSWORD }}
-        port: ${{ secrets.PORT }}
-        script: |
                 bash ~/bin/restart_OTA.sh
 
