@@ -72,8 +72,8 @@ LINUX_FIRMWARE="brcmfmac-all iwlwifi-7260 iwlwifi-7265D ibt-hw fw_sst bcm2045-bt
 LINUX_FIRMWARE="${LINUX_FIRMWARE} ath10k_qca6174a-5 qca6174a-5-bt btusb"
 
 # bq24190-charger
-USE="${USE} bq24190-charger bq24190"
-#LINUX_FIRMWARE="${LINUX_FIRMWARE} bq24190-charger bq24190"
+USE="${USE} bq24190-charger bq24190 fusb302 tcpm typec"
+LINUX_FIRMWARE="${LINUX_FIRMWARE} bq24190-charger bq24190 fusb302 tcpm typec"
 
 # BATTERY_MAX17042
 USE="${USE} max17042_battery max17042"
