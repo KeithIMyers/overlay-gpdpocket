@@ -27,10 +27,10 @@ USE="${USE} eve_bt_hacks"
 USE="${USE} eve_wifi_etsi"
 
 # Disable ACPI AC device and use USB PD power supply driver
-USE="${USE} -acpi_ac"
+#USE="${USE} -acpi_ac"
 
 # Google USBPD peripheral firmwares
-LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
+#LINUX_FIRMWARE="${LINUX_FIRMWARE} cros-pd"
 
 USE="${USE} containers kvm_host crosvm-gpu virtio_gpu"
 
